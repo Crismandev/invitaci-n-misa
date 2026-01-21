@@ -60,10 +60,21 @@ body {
 
     /* Overlay positioning */
     position: absolute;
-    bottom: 80px;
-    /* Adjusted up to 80px */
+    bottom: 18%;
+    /* Moving higher as requested */
     left: 50%;
     transform: translateX(-50%);
+
+    /* Responsive sizing - More compact */
+    width: auto;
+    /* Allow content to define width */
+    min-width: 200px;
+    /* Minimum clickable area */
+    max-width: 80%;
+    /* Don't exceed screen width */
+    text-align: center;
+    white-space: nowrap;
+    /* Prevent awkward wrapping */
 
     box-shadow: 0 4px 10px rgba(191, 161, 95, 0.3);
     margin: 0;
@@ -71,8 +82,18 @@ body {
 
 .map-btn:hover {
     background-color: #a3884d;
-    /* transform removed to prevent displacement */
     box-shadow: 0 6px 15px rgba(191, 161, 95, 0.4);
+}
+
+/* Specific Mobile Adjustment */
+@media (max-width: 400px) {
+    .map-btn {
+        padding: 0.8rem 1.5rem;
+        /* Smaller padding on very small screens */
+        font-size: 0.9rem;
+        bottom: 10%;
+        /* Slight adjustment if needed */
+    }
 }
 
 /* Tablet/Desktop tweaks */
@@ -85,5 +106,10 @@ body {
     .card {
         min-height: auto;
         border-radius: 12px;
+    }
+
+    .map-btn {
+        /* On desktop, keep it distinct */
+        bottom: 50px;
     }
 }
